@@ -29,12 +29,12 @@ fi
 
 # Ensure .ssh dir exists with correct permissions
 mkdir -p "$HOME_DIR/.ssh"
-chmod 777 -R "$HOME_DIR/.ssh"
+chmod 700 -R "$HOME_DIR/.ssh"
 
 # Copy keys
 cat "$TEMP_DIR/authorized_keys" > "$AUTH_KEYS"
-chmod 600 "$AUTH_KEYS"
 chown "$CURRENT_USER:$CURRENT_USER" "$AUTH_KEYS"
+chmod 600 "$AUTH_KEYS"
 
 # Cleanup
 rm -rf "$TEMP_DIR"
