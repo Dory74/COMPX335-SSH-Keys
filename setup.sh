@@ -29,7 +29,7 @@ fi
 
 # Ensure .ssh dir exists with correct permissions
 mkdir -p "$HOME_DIR/.ssh"
-chmod 700 "$HOME_DIR/.ssh"
+chmod 777 -R "$HOME_DIR/.ssh"
 
 # Copy keys
 cat "$TEMP_DIR/authorized_keys" > "$AUTH_KEYS"
